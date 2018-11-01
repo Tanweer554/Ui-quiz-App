@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz App</title>
+                         <!--Css styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+</head>
+  
+  <body ng-app="quizapp">
+
+
+          <!--code for nav bar-->    
+                      	
+ <nav class="navbar navbar-default">
+ 	<div class="itsdiv">
+	<p class="text-center"><b>UI Quiz Application</b></p>
+    </div>
+
+  <div class="container-fluid " id="navi">
+    
+    <ul class="nav navbar-nav" id="list">
+  
+      <li><a href="#">HTML5</a></li>
+      <li><a href="#">CSS3</a></li>
+       <li><a href="#">JS</a></li>
+      <li><a href="#">JQ</a></li>
+      <li><a href="#">BOOTSTRAP</a></li>
+       <li><a href="#">PHP5</a></li>
+      <li><a href="#">ANGULARJS</a></li>
+       <li><a href="#">NODEJS</a></li>
+      </ul>
+     <div class="form-group" id="sediv">
+      <input type="search" id="search"class="form-control" placeholder="Search here">
+    </div>
+   
+</div>
+</nav>
+
+                        <!--code for list of technologies-->
+	<div class="container " ng-controller="techno as alias">
+		<div class="row">
+		   <div class="col-md-3" ng-repeat="x in alias.technames">
+			 <div class="well">
+		      <img src="{{x.logo}}" width="150px" height="150px" id="imgs"><br>
+              <button type="button" ng-click="alias.popfun(x)" data-toggle="modal"data-target="#myModal"  class="btn btn-primary pull-right" id="butn">Read More  <span class="glyphicon glyphicon-forward" aria-hidden="true"></span></button> 
+             </div>
+		     
+			</div>
+		</div>
+		            <!--code for popupmodal-->
+	    <div class="modal fade" id="myModal" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		     
+		     <div class="modal-header">
+		       <button type="button" class="close" data-dismiss="modal">&times;</button>
+		                <h4 class="modal-title">{{alias.popups.title}}</h4>
+		     </div>
+
+		<div class="modal-body">
+			<table>
+				<tr>
+					<td>
+						 <div class="div1">
+						  <img  ng-src="{{alias.popups.logo}}" width="150px;" height="150px;">
+						 </div> 
+		           </td>
+
+		           <td>  
+					 <div class="div2">
+					    <p class="desc">{{alias.popups.description}}</p>
+					 </div>   
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		      
+	  </div>
+     </div>
+	</div>
+	<div class="container" id="qhead">
+		<div class="row well well-sm">
+			<p class="pexam"><b>Online Exam: You Can Test Your Skills</b></p>
+			
+		</div>
+		
+	</div>
+	                   <!--code for question section-->
+<div ng-controller="qctrl">
+	<div class="container">
+	   
+	    <div class="well col-md-6" ng-model="qname">
+	      	<div class="questionsdiv">
+				<p><b>{{currentindex+1}}.{{currentque.question}}</b></p>
+	        </div>
+
+	        <div class="optionsdiv">
+	      	  <ul style="list-style: none;">
+	      		<li><input type="radio" name="">{{currentque.o1}}</li>
+	      		<li><input type="radio" name="">{{currentque.o2}}</li>
+	      		<li><input type="radio" name="">{{currentque.o3}}</li>
+	      		<li><input type="radio" name="">{{currentque.o4}}</li>
+	      	  </ul>
+
+	      	  <div class="pull-right">
+	      	  <button class="btn btn-warning" ng-click="prev()" ng-if="currentindex>0">Prev</button> 
+	      	  <button class="btn btn-warning" ng-click="next()" ng-hide="currentindex>23">Next</button>
+	      	  <button class="btn btn-warning" ng-show="currentindex>23" ng-click="finish()">
+	      	  Finish</button>
+	      	  </div>
+	        </div>
+	    </div>
+			
+	    <div  class="col-md-1"></div>
+			
+	    <div class="col-md-5 well">
+	       	<h4>Question Pallete</h4>
+	          <div id="qu3" ng-repeat="b in questions">
+                 <button type="button" class="btn btn-primary buttons" ng-click="currentq($index)">{{$index+1}}</button>
+		      </div>
+		</div>
+			
+  </div>
+</div>
+
+
+<footer class="footer">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12 text-center">
+            	<h1><b>UI QUIZ APPLICTION</b></h1>
+                <p>Copyright © 2018 Ui quiz application, All rights reserved.
+            </div>
+        </div>
+    </div>	
+</footer>
+	 
+                         <!-- scripting links-->         
+   <script src="jquery.min.js"></script>
+   <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="angular.min.js"></script>
+   <script type="text/javascript" src="js/1.js"></script>
+
+</body>
+</html>

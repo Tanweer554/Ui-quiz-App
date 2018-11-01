@@ -1,0 +1,102 @@
+                    /* styling for UI Quiz Application(only)*/
+.itsdiv{
+	background-color: #f1c40f;
+	height:80px;
+
+}
+.itsdiv p{
+	font-size: 40px;
+	color: #1B1464;
+
+}
+
+
+
+                         /*styling for nav bar*/
+#navi{
+	background-color:#f1c40f;
+	color:#2f3640;
+}
+#navi ul{
+	padding-left: 75px;	
+}
+#navi ul li{
+	padding-left: 10px;
+	color: white;
+}
+#list,#sediv{
+padding-right: 143px;
+}
+
+
+#sediv{
+	padding-top: 5px;
+}
+#search{
+	width: 20%;
+}
+
+
+                     /*styling for list of technologies*/
+#imgs,#butn{
+	padding-bottom:5px;
+    padding-right: 5px;
+}
+.well{
+	height: 212px;
+}
+.div1:after{
+  content: "";
+  background-color: #ecf0f1;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0px;
+  left: 45%;
+  display: block;
+}
+.div2{
+	padding-left: 30%;
+}
+
+
+                          /*styling for question pallete*/
+
+
+#qu3{
+	display: inline;
+	padding-right: 5px;
+
+	}
+
+
+
+
+                /* styling for online exam:test your skills(0nly)*/
+#qhead{
+	padding-left: 30px;
+}
+.pexam{
+	font-size:20px; 
+	color:#e84118;
+}
+.well,.pexam{
+	padding-top: 10px;
+}
+.well-sm{
+	height: 70px;
+	width: 101.8%;
+}
+
+
+
+                       /* styling for footer*/
+.footer{
+	background-color: #1abc9c;
+}
+.footer h1{
+	color: #2C3A47;
+}
+.footer p{
+	color: black;
+}
